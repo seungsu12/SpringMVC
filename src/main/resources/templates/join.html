@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, member-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Join</title>
+    <style>
+       
+        .main-wrapper{
+            margin: 0 auto 0 auto;
+            width: 600px;
+            height: 750px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: 3px solid olivedrab;
+            border-radius: 2em;
+        }
+        .input-wrapper{
+
+            width: 500px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            margin : 30px 0 30px 0;
+        }
+        .input-wrapper input{
+            height: 40px;
+            margin-top: 10px;
+        }
+        .input-wrapper div{
+            margin-top: 10px;
+        }
+        .error{
+            color: red;
+
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="main-wrapper">
+    <form action="/join" method="post"m th:object="${member}">
+
+        <h1 >회원가입 </h1>
+        <div class="input-wrapper">
+            <label for="name">이름</label>
+            <input th:errorclass="error" id="name" type="text" th:field="*{name}" placeholder="이름을 입력해주세요">
+
+            <div class="error" th:errors="*{name}">이름 오류</div>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="id">아이디</label>
+            <input id="id" type="text" th:field="*{loginId}" placeholder="아이디를 입력해주세요">
+            <div class="error"th:errors="*{loginId}" th:text>나이오류</div>
+        </div>
+
+        <div class="input-wrapper">
+            <label for="password">이메일</label>
+            <input id="password"  type="text" th:field="*{password}" placeholder="비밀번호를 입력해주세요">
+            <div class="error" th:errors="*{password}">password 오류</div>
+        </div>
+
+        <div class="input-wrapper">
+            <input type="submit" value="회원가입">
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

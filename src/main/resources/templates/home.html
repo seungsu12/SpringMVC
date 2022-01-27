@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+        ;
+        }
+        .main-wrapper{
+            margin: 0 auto 0 auto;
+            width: 600px;
+            height: 750px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            border: 3px solid olivedrab;
+            border-radius: 2em;
+        }
+
+        .input-wrapper input{
+            height: 40px;
+            margin-top: 10px;
+        }
+        .input-wrapper div{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="main-wrapper">
+         <h1>메인</h1>
+        <button th:onclick="|location.href='@{/join}'|" class="input-wrapper">회원가입</button>
+        <button class="input-wrapper">로그인</button>
+    </div>
+</body>
+</html>
