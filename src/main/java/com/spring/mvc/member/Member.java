@@ -1,4 +1,4 @@
-package com.spring.mvc.domain;
+package com.spring.mvc.member;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

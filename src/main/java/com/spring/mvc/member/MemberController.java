@@ -1,14 +1,11 @@
-package com.spring.mvc.controller;
+package com.spring.mvc.member;
 
-import com.spring.mvc.domain.LoginMember;
-import com.spring.mvc.domain.Member;
-import com.spring.mvc.repository.MemberRepository;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +21,17 @@ public class MemberController {
     }
 
     @GetMapping("/main")
-    public String home() {
-        return "home";
+    public String homeLogin(@CookieValue(name = "memberId", required = false) Long memberId, Model model) {
+        if (memberId == null) {
+            return "home";
+        }
+        //로그인
+        Member loginMember = memberRepository.findById(memberId);
+        if (loginMember == null) {
+            return "home";
+        }
+        model.addAttribute("member", loginMember);
+        return "loginHome";
     }
 
     @GetMapping("/join")

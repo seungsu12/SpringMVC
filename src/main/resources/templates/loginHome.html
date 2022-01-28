@@ -41,13 +41,21 @@
 <body>
 
 
-    <div class="main-wrapper">
-         <h1>메인</h1>
-        <div class="button_wrapper">
+<div class="main-wrapper">
+    <h1>메인</h1>
+    <div>
 
-        <button th:onclick="|location.href='@{/join}'|" class="input-wrapper">회원가입</button>
-        <button class="input-wrapper" th:onclick="|location.href='@{/login}'|">로그인</button>
-        </div>
+        <h2 th:text="${member.name}"></h2>
     </div>
+    <div class="button_wrapper">
+
+        <button th:onclick="|location.href='@{/items}'|" class="input-wrapper">상품관리</button>
+        <form th:action="@{/logout}" method="post">
+
+            <button type="submit" class="input-wrapper" >로그아웃</button>
+
+        </form>
+    </div>
+</div>
 </body>
 </html>

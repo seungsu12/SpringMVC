@@ -1,4 +1,4 @@
-package com.spring.mvc.domain;
+package com.spring.mvc.login;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
