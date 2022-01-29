@@ -45,7 +45,7 @@
 
 
 <div class="main-wrapper">
-    <form action="/login" method="post" th:object="${member}">
+    <form action="/login" method="post" th:action th:object="${member}">
 
         <h1 >로그인 </h1>
 <!--        <div th:if="${#fields.hasGlobalErrors()}">-->

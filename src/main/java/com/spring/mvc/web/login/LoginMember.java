@@ -1,4 +1,4 @@
-package com.spring.mvc.login;
+package com.spring.mvc.web.login;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

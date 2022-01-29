@@ -1,4 +1,4 @@
-package com.spring.mvc.session;
+package com.spring.mvc.web.session;
 
 
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class SessionManager {
     private Map<String,Object> sessionStore = new ConcurrentHashMap<>();
 
 
-    public void createSession(HttpServletResponse response ,Object value) {
+    public void createSession(Object value,HttpServletResponse response) {
 
         String sessionId = UUID.randomUUID().toString();
 
@@ -27,6 +27,7 @@ public class SessionManager {
 
         Cookie mySessionCookie = new Cookie(SESSION_COOKIE_NAME, sessionId);
         response.addCookie(mySessionCookie);
+
 
     }
 
@@ -45,7 +46,7 @@ public class SessionManager {
             return null;
         }
         return Arrays.stream(request.getCookies())
-                .filter(c -> c.getValue().equals(sessionCookieName))
+                .filter(c -> c.getName().equals(sessionCookieName))
                 .findFirst()
                 .orElse(null);
 

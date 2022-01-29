@@ -1,7 +1,7 @@
-package com.spring.mvc.controller;
+package com.spring.mvc.web.controller;
 
-import com.spring.mvc.member.Member;
-import com.spring.mvc.member.MemberRepository;
+import com.spring.mvc.web.member.Member;
+import com.spring.mvc.web.member.MemberRepository;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;

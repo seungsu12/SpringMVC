@@ -1,6 +1,5 @@
-package com.spring.mvc.member;
+package com.spring.mvc.web.member;
 
-import com.spring.mvc.member.Member;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,5 @@
-package com.spring.mvc.member;
+package com.spring.mvc.web.member;
 
-import com.spring.mvc.member.Member;
-import com.spring.mvc.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
